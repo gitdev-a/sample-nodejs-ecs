@@ -1,6 +1,6 @@
 # Example Node.js Project
 
-This is a sample Node.js calculator project and auto deployemnt code in AWS cloud environment using Terraform.
+This is a sample Node.js calculator project and auto deployment code in AWS cloud environment using Terraform.
 
 ## Table of Contents
 
@@ -11,9 +11,9 @@ This is a sample Node.js calculator project and auto deployemnt code in AWS clou
 
 ## Build
 
-The calculator application is referred from https://github.com/andrewagain/calculator . The source code uses AS IS.
+The calculator application is referred from https://github.com/andrewagain/calculator. The source code is used AS IS.
 
-To build and test in local, the application can be built using nodejs. In our example, nodejs 16 used to be compatinble with the packages.
+To build and test locally, the application can be built using Node.js. In our example, Node.js 16 is used to be compatible with the packages.
 
 To install the dependencies, run the following command:
 
@@ -21,17 +21,17 @@ To install the dependencies, run the following command:
 npm install
 ```
 
-Below command can run the application in local:
+The below command can run the application locally:
 
 ```bash
 npm start
 ```
 
-To build the application terraform, aws cli and docker component is required. The build script will create docker image and upload the image to ECR.
+To build the application, Terraform, AWS CLI, and Docker components are required. The build script will create a Docker image and upload the image to ECR.
 
-AWS profile needs to be created in CLI command. In this project, alpha-access profile name used. Profile had elevated privileges. AWS Account Number needs to be updated in the build and terraform main script.
+An AWS profile needs to be created in the CLI command. In this project, the `alpha-access` profile name is used. The profile has elevated privileges. The AWS Account Number needs to be provided in the build and Terraform main script.
 
-Below command creates the ECR repository and this is required for uploading the image to ECR.
+The below command creates the ECR repository, which is required for uploading the image to ECR.
 
 ```bash
 cd ./platform
@@ -39,13 +39,13 @@ terraform init
 terraform apply -target=module.ecr
 ```
 
-To build the docker image and upload it to ECR, execute build script
+To build the Docker image and upload it to ECR, execute the build script:
 
 ```bash
 sh ./build.sh
 ```
 
-For Windows environment
+For Windows environment:
 
 ```cmd
 build.cmd
@@ -53,7 +53,7 @@ build.cmd
 
 ## Installation
 
-The Terraform code will create network components, application load balancer and ECS service task.
+The Terraform code will create network components, an application load balancer, and an ECS service task.
 
 ```bash
 cd ./platform
@@ -63,9 +63,8 @@ terraform apply
 
 ## Security
 
-The code does not use SSL or authentication or DNS. But it is strictly advised to use them.
+The code does not use SSL, authentication, or DNS. However, it is strictly advised to use them.
 
 ## Architecture 
 
 ![Architecture Diagram](./images/High-level-architecture-diagram.png)
-
